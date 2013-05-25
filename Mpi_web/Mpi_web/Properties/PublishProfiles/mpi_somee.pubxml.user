@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATnheIdGn+UG7jfVvwEEMuwAAAAACAAAAAAAQZgAAAAEAACAAAACkoyzOcbg1PLFPhWatc55HXl4pdUUSr///zLcmEFAhdgAAAAAOgAAAAAIAACAAAABvFcee4jscFpfHpyguR7A/gPGe9DjFFayzzPCD9ZapOiAAAABg6pa5j7IcXmT0IDPZuJsx6vkqCWq7aI5VVn3KiUwDhEAAAABXUWOw9mPuLriVKz2iNMQm2Te4gWMYkgIWRYuSDbM9i5n9Qp5SI1U+3qqHVc3SXYE0hHdbaEyK7uxhh4By2UnS</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Code/MyMemebershipProvider.cs">
+      <publishTime>05/25/2013 20:26:57</publishTime>
+    </File>
+    <File Include="App_Code/MyUser.cs">
+      <publishTime>05/25/2013 20:26:55</publishTime>
+    </File>
+    <File Include="baza.edmx.diagram">
+      <publishTime>05/25/2013 20:26:48</publishTime>
+    </File>
+    <File Include="Baza.edmx.sql">
+      <publishTime>05/25/2013 19:25:10</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>05/25/2013 18:57:34</publishTime>
+    </File>
+    <File Include="bin/Mpi_web.dll">
+      <publishTime>05/26/2013 00:11:39</publishTime>
+    </File>
+    <File Include="bin/Mpi_web.pdb">
+      <publishTime>05/26/2013 00:11:39</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>05/26/2013 00:11:17</publishTime>
+    </File>
+    <File Include="glowna.Master">
+      <publishTime>05/25/2013 21:53:59</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>05/25/2013 19:55:21</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/25/2013 18:57:43</publishTime>
+    </File>
+    <File Include="Register.aspx">
+      <publishTime>05/25/2013 23:51:17</publishTime>
+    </File>
+    <File Include="Users/New.aspx">
+      <publishTime>05/26/2013 00:01:55</publishTime>
+    </File>
+    <File Include="Users/Tasks.aspx">
+      <publishTime>05/25/2013 23:15:31</publishTime>
+    </File>
+    <File Include="Users/Web.config">
+      <publishTime>05/25/2013 19:53:11</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/26/2013 00:11:47</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
