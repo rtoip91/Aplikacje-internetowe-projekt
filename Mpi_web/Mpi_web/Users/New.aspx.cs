@@ -21,7 +21,7 @@ namespace Mpi_web.Users
             Label1.Visible = false;
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void AddButton_Click(object sender, EventArgs e)
         {
             Baza2Context baza = new Baza2Context();
             long id = (from u in baza.uzytkownik where u.login == User.Identity.Name select u.id_uzytkownik).FirstOrDefault();
@@ -34,5 +34,7 @@ namespace Mpi_web.Users
             baza.SaveChanges();
             Label1.Visible = true;
         }
+
+     
     }
 }

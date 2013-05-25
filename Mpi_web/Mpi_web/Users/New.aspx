@@ -16,29 +16,27 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager>
     <table class="auto-style1">
         <tr>
             <td>Zadana Liczba</td>
             <td>
-                <asp:TextBox ID="LiczbaBox" runat="server" Width="305px" AutoPostBack="True" OnTextChanged="LiczbaBox_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="LiczbaBox" runat="server" Width="305px" OnTextChanged="LiczbaBox_TextChanged"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style3">plik txt</td>
             <td class="auto-style3">
-                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                    <ContentTemplate>
+               
+                   
                         <asp:FileUpload ID="FileUpload1" runat="server" Height="26px" Width="313px" />
-                    </ContentTemplate>
-                </asp:UpdatePanel>
+                   
+                
             </td>
         </tr>
         <tr>
             <td class="auto-style5"></td>
             <td class="auto-style5">
-                <asp:Button ID="Button1" runat="server" Text="Dodaj" OnClick="Button1_Click" Width="125px" />
+                <asp:Button ID="AddButton" runat="server"  OnClick="AddButton_Click" style="height: 26px" Text="Dodaj" Width="98px" EnableViewState="False" />
             </td>
         </tr>
         <tr>
@@ -54,7 +52,6 @@
             </td>
         </tr>
         
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        </asp:UpdatePanel>
+        
     </table>
     </asp:Content>
