@@ -21,6 +21,7 @@
             <td>Zadana Liczba</td>
             <td>
                 <asp:TextBox ID="LiczbaBox" runat="server" Width="305px" OnTextChanged="LiczbaBox_TextChanged"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="LiczbaBox" ErrorMessage="Należy podać liczbę" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>

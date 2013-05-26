@@ -1,4 +1,4 @@
-﻿// Default code generation is disabled for model 'G:\Mpi_web\Mpi_web\baza.edmx'. 
+﻿// Default code generation is disabled for model 'G:\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\baza.edmx'. 
 // To enable default code generation, change the value of the 'Code Generation Strategy' designer
 // property to an alternate value. This property is available in the Properties Window when the model is
 // open in the designer.

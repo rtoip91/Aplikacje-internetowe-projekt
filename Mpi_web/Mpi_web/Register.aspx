@@ -6,6 +6,15 @@
         }
         .auto-style2 {
             height: 30px;
+            text-align: right;
+        }
+        .auto-style3 {
+            width: 98px;
+        }
+        .auto-style4 {
+            height: 30px;
+            text-align: right;
+            width: 98px;
         }
     </style>
 </asp:Content>
@@ -17,40 +26,40 @@
             </td>
         </tr>
         <tr>
-            <td>Login</td>
+            <td class="auto-style3" style="text-align: right">Login</td>
             <td>
                 <asp:Panel ID="Panel1" runat="server">
-                    <asp:TextBox ID="LoginBox" runat="server" style="margin-bottom: 0px"></asp:TextBox>
+                    <asp:TextBox ID="LoginBox" runat="server" style="margin-bottom: 0px" Width="150px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="LoginBox" ErrorMessage="Należy podać login" ForeColor="Red"></asp:RequiredFieldValidator>
                 </asp:Panel>
             </td>
         </tr>
         <tr>
-            <td>Hasło</td>
+            <td class="auto-style3" style="text-align: right">Hasło</td>
             <td>
                 <asp:Panel ID="Panel2" runat="server">
-                    <asp:TextBox ID="PassBox" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="PassBox" runat="server" Width="150px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PassBox" ErrorMessage="Należy podać hasło" ForeColor="Red"></asp:RequiredFieldValidator>
                 </asp:Panel>
             </td>
         </tr>
         <tr>
-            <td class="auto-style2">Powtórz hasło</td>
+            <td class="auto-style4">Powtórz hasło</td>
             <td class="auto-style2">
-                <asp:Panel ID="Panel3" runat="server">
-                    <asp:TextBox ID="PassBox2" runat="server"></asp:TextBox>
+                <asp:Panel ID="Panel3" runat="server" style="text-align: left">
+                    <asp:TextBox ID="PassBox2" runat="server" Width="150px"></asp:TextBox>
                     <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="PassBox" ControlToValidate="PassBox2" ErrorMessage="Hasła nie są takie same" ForeColor="Red"></asp:CompareValidator>
                 </asp:Panel>
             </td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
+            <td class="auto-style3">&nbsp;</td>
             <td>
                 <asp:Button ID="UserButton" runat="server" OnClick="UserButton_Click" Text="Dodaj" Width="128px" />
             </td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
+            <td class="auto-style3">&nbsp;</td>
             <td>
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>

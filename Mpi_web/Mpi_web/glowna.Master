@@ -114,9 +114,9 @@ ul a:hover {
            </div>
 	<div id="MENU">
         <ul>
-                <li><asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/Register.aspx">Rejestracja</asp:LinkButton></li>
-                <li><asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Users/New.aspx">Nowe Zadanie</asp:LinkButton></li>
-                <li><asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/Users/Tasks.aspx">Przegląd Zadań</asp:LinkButton></li>
+                <li><asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/Register.aspx" CausesValidation="False">Rejestracja</asp:LinkButton></li>
+                <li><asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Users/New.aspx" CausesValidation="False">Nowe Zadanie</asp:LinkButton></li>
+                <li><asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/Users/Tasks.aspx" CausesValidation="False">Przegląd Zadań</asp:LinkButton></li>
                 
         </ul>
         
