@@ -38,7 +38,7 @@
             <td class="auto-style3" style="text-align: right">Hasło</td>
             <td>
                 <asp:Panel ID="Panel2" runat="server">
-                    <asp:TextBox ID="PassBox" runat="server" Width="150px"></asp:TextBox>
+                    <asp:TextBox ID="PassBox" runat="server" Width="150px" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="PassBox" ErrorMessage="Należy podać hasło" ForeColor="Red"></asp:RequiredFieldValidator>
                 </asp:Panel>
             </td>
@@ -47,7 +47,7 @@
             <td class="auto-style4">Powtórz hasło</td>
             <td class="auto-style2">
                 <asp:Panel ID="Panel3" runat="server" style="text-align: left">
-                    <asp:TextBox ID="PassBox2" runat="server" Width="150px"></asp:TextBox>
+                    <asp:TextBox ID="PassBox2" runat="server" Width="150px" TextMode="Password"></asp:TextBox>
                     <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="PassBox" ControlToValidate="PassBox2" ErrorMessage="Hasła nie są takie same" ForeColor="Red"></asp:CompareValidator>
                 </asp:Panel>
             </td>

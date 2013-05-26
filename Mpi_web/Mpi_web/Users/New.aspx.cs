@@ -22,6 +22,10 @@ namespace Mpi_web.Users
             Label1.Visible = false;
         }
 
+        /// <summary>
+        /// Tworzenie nowego zadania
+        /// </summary>
+        /// <param name="number">Liczba do sprawdzenia pierwszości</param>
         private void nowy(string number)
         {
             Baza2Context baza = new Baza2Context();
@@ -37,6 +41,7 @@ namespace Mpi_web.Users
             nowe.algorytm_id_algorytm = Int32.Parse(ListaAlgorytmow.SelectedValue);
             baza.zadanie.Add(nowe);
             baza.SaveChanges();
+            Label1.Text = "Dodano pomyślnie";
             Label1.Visible = true;
         }
 
@@ -57,15 +62,30 @@ namespace Mpi_web.Users
             myStream.Read(Input, 0, filelen);
             char[] Input2 = new char[filelen];
 
-            for (int loop1 = 0; loop1 < filelen; loop1++)
+            try
             {
-                Input2[loop1] = (char)Input[loop1];
-                displayString.Append((Input2[loop1].ToString()));
-                
-            }
-            String a = displayString.ToString();
 
-            nowy(a);
+                for (int loop1 = 0; loop1 < filelen; loop1++)
+                {
+                    Input2[loop1] = (char)Input[loop1];
+                    // sprawdzenie czy kolejny wczytany z pliku element jest cyfrą
+                    if (Input2[loop1] < '0' || Input2[loop1] > '9')
+                    {
+                        throw new Exception();
+                    }
+                    displayString.Append((Input2[loop1].ToString()));
+
+
+                }
+                String a = displayString.ToString();
+
+                nowy(a);
+            }
+            catch
+            {
+                Label1.Text = "Błędna zawarotść pliku";
+                Label1.Visible = true;
+            }
 
 
         }
