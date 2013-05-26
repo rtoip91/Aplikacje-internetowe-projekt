@@ -12,6 +12,8 @@
         <AssociationConnector Association="sql29880Model.FK_status_zadanie" ManuallyRouted="false" />
         <AssociationConnector Association="sql29880Model.FK_uzytkowniktyp" ManuallyRouted="false" />
         <AssociationConnector Association="sql29880Model.FK_zadanieuzytkownik" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="sql29880Model.algorytm" Width="1.5" PointX="8.125" PointY="1.75" />
+        <AssociationConnector Association="sql29880Model.algorytmzadanie" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

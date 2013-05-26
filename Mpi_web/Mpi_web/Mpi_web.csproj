@@ -74,6 +74,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="algorytm.cs">
+      <DependentUpon>baza.tt</DependentUpon>
+    </Compile>
     <Compile Include="baza.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

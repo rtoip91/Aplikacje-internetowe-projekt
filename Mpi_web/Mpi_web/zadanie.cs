@@ -16,15 +16,18 @@ namespace Mpi_web
     {
         public long id_zadanie { get; set; }
         public string zadana_liczba { get; set; }
-        public string wynik { get; set; }
+        public string wynik1 { get; set; }
         public Nullable<int> postep { get; set; }
         public Nullable<System.TimeSpan> czas_rozpoczecie { get; set; }
         public Nullable<System.TimeSpan> czas_zakonczenia { get; set; }
-        public Nullable<long> kolejnosc { get; set; }
+        public Nullable<System.DateTime> czas_dodania { get; set; }
         public long status__id_status { get; set; }
         public long uzytkownik_id_uzytkownik { get; set; }
+        public string wynik2 { get; set; }
+        public int algorytm_id_algorytm { get; set; }
     
         public virtual status_ status_ { get; set; }
         public virtual uzytkownik uzytkownik { get; set; }
+        public virtual algorytm algorytm { get; set; }
     }
 }

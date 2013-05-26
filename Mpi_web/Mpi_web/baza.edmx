@@ -4,100 +4,125 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="sql29880Model.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="sql29880ModelStoreContainer">
-          <EntitySet Name="status_" EntityType="sql29880Model.Store.status_" store:Type="Tables" Schema="sql29880" />
-          <EntitySet Name="typ" EntityType="sql29880Model.Store.typ" store:Type="Tables" Schema="sql29880" />
-          <EntitySet Name="uzytkownik" EntityType="sql29880Model.Store.uzytkownik" store:Type="Tables" Schema="sql29880" />
-          <EntitySet Name="zadanie" EntityType="sql29880Model.Store.zadanie" store:Type="Tables" Schema="sql29880" />
-          <AssociationSet Name="FK_status_zadanie" Association="sql29880Model.Store.FK_status_zadanie">
-            <End Role="status_" EntitySet="status_" />
-            <End Role="zadanie" EntitySet="zadanie" />
-          </AssociationSet>
-          <AssociationSet Name="FK_uzytkowniktyp" Association="sql29880Model.Store.FK_uzytkowniktyp">
-            <End Role="typ" EntitySet="typ" />
-            <End Role="uzytkownik" EntitySet="uzytkownik" />
-          </AssociationSet>
-          <AssociationSet Name="FK_zadanieuzytkownik" Association="sql29880Model.Store.FK_zadanieuzytkownik">
-            <End Role="uzytkownik" EntitySet="uzytkownik" />
-            <End Role="zadanie" EntitySet="zadanie" />
-          </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="status_">
-          <Key>
-            <PropertyRef Name="id_status" />
-          </Key>
-          <Property Name="id_status" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="nazwa" Type="varchar" MaxLength="10000" />
-        </EntityType>
-        <EntityType Name="typ">
-          <Key>
-            <PropertyRef Name="id_typ" />
-          </Key>
-          <Property Name="id_typ" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="nazwa" Type="varchar" Nullable="false" MaxLength="10000" />
-        </EntityType>
-        <EntityType Name="uzytkownik">
-          <Key>
-            <PropertyRef Name="id_uzytkownik" />
-          </Key>
-          <Property Name="id_uzytkownik" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="login" Type="varchar" MaxLength="10000" />
-          <Property Name="haslo" Type="varchar" MaxLength="10000" />
-          <Property Name="typ_id_typ" Type="bigint" Nullable="false" />
-        </EntityType>
-        <EntityType Name="zadanie">
-          <Key>
-            <PropertyRef Name="id_zadanie" />
-          </Key>
-          <Property Name="id_zadanie" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="zadana_liczba" Type="varchar" MaxLength="10000" />
-          <Property Name="wynik" Type="varchar" MaxLength="10000" />
-          <Property Name="postep" Type="int" />
-          <Property Name="czas_rozpoczecie" Type="time" />
-          <Property Name="czas_zakonczenia" Type="time" />
-          <Property Name="kolejnosc" Type="bigint" />
-          <Property Name="status__id_status" Type="bigint" Nullable="false" />
-          <Property Name="uzytkownik_id_uzytkownik" Type="bigint" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_status_zadanie">
-          <End Role="status_" Type="sql29880Model.Store.status_" Multiplicity="1" />
-          <End Role="zadanie" Type="sql29880Model.Store.zadanie" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="status_">
-              <PropertyRef Name="id_status" />
-            </Principal>
-            <Dependent Role="zadanie">
-              <PropertyRef Name="status__id_status" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_uzytkowniktyp">
-          <End Role="typ" Type="sql29880Model.Store.typ" Multiplicity="1" />
-          <End Role="uzytkownik" Type="sql29880Model.Store.uzytkownik" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="typ">
-              <PropertyRef Name="id_typ" />
-            </Principal>
-            <Dependent Role="uzytkownik">
-              <PropertyRef Name="typ_id_typ" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_zadanieuzytkownik">
-          <End Role="uzytkownik" Type="sql29880Model.Store.uzytkownik" Multiplicity="1" />
-          <End Role="zadanie" Type="sql29880Model.Store.zadanie" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="uzytkownik">
-              <PropertyRef Name="id_uzytkownik" />
-            </Principal>
-            <Dependent Role="zadanie">
-              <PropertyRef Name="uzytkownik_id_uzytkownik" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="sql29880Model.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="sql29880ModelStoreContainer">
+    <EntitySet Name="status_" EntityType="sql29880Model.Store.status_" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="typ" EntityType="sql29880Model.Store.typ" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="uzytkownik" EntityType="sql29880Model.Store.uzytkownik" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="zadanie" EntityType="sql29880Model.Store.zadanie" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="algorytmSet" EntityType="sql29880Model.Store.algorytmSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_status_zadanie" Association="sql29880Model.Store.FK_status_zadanie">
+      <End Role="status_" EntitySet="status_" />
+      <End Role="zadanie" EntitySet="zadanie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_uzytkowniktyp" Association="sql29880Model.Store.FK_uzytkowniktyp">
+      <End Role="typ" EntitySet="typ" />
+      <End Role="uzytkownik" EntitySet="uzytkownik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_zadanieuzytkownik" Association="sql29880Model.Store.FK_zadanieuzytkownik">
+      <End Role="uzytkownik" EntitySet="uzytkownik" />
+      <End Role="zadanie" EntitySet="zadanie" />
+    </AssociationSet>
+    <AssociationSet Name="algorytmzadanie" Association="sql29880Model.Store.algorytmzadanie">
+      <End Role="algorytm" EntitySet="algorytmSet" />
+      <End Role="zadanie" EntitySet="zadanie" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="status_">
+    <Key>
+      <PropertyRef Name="id_status" />
+    </Key>
+    <Property Name="id_status" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nazwa" Type="varchar" Nullable="true" MaxLength="10000" />
+  </EntityType>
+  <EntityType Name="typ">
+    <Key>
+      <PropertyRef Name="id_typ" />
+    </Key>
+    <Property Name="id_typ" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nazwa" Type="varchar" Nullable="false" MaxLength="10000" />
+  </EntityType>
+  <EntityType Name="uzytkownik">
+    <Key>
+      <PropertyRef Name="id_uzytkownik" />
+    </Key>
+    <Property Name="id_uzytkownik" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="login" Type="varchar" Nullable="true" MaxLength="10000" />
+    <Property Name="haslo" Type="varchar" Nullable="true" MaxLength="10000" />
+    <Property Name="typ_id_typ" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="zadanie">
+    <Key>
+      <PropertyRef Name="id_zadanie" />
+    </Key>
+    <Property Name="id_zadanie" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="zadana_liczba" Type="varchar" Nullable="true" MaxLength="10000" />
+    <Property Name="wynik1" Type="varchar" Nullable="true" MaxLength="10000" />
+    <Property Name="postep" Type="int" Nullable="true" />
+    <Property Name="czas_rozpoczecie" Type="time" Nullable="true" />
+    <Property Name="czas_zakonczenia" Type="time" Nullable="true" />
+    <Property Name="czas_dodania" Type="datetime" Nullable="true" />
+    <Property Name="status__id_status" Type="bigint" Nullable="false" />
+    <Property Name="uzytkownik_id_uzytkownik" Type="bigint" Nullable="false" />
+    <Property Name="wynik2" Type="varchar" Nullable="false" />
+    <Property Name="algorytm_id_algorytm" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="algorytmSet">
+    <Key>
+      <PropertyRef Name="id_algorytm" />
+    </Key>
+    <Property Name="id_algorytm" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nazwa" Type="varchar" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_status_zadanie">
+    <End Role="status_" Type="sql29880Model.Store.status_" Multiplicity="1" />
+    <End Role="zadanie" Type="sql29880Model.Store.zadanie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="status_">
+        <PropertyRef Name="id_status" />
+      </Principal>
+      <Dependent Role="zadanie">
+        <PropertyRef Name="status__id_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_uzytkowniktyp">
+    <End Role="typ" Type="sql29880Model.Store.typ" Multiplicity="1" />
+    <End Role="uzytkownik" Type="sql29880Model.Store.uzytkownik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typ">
+        <PropertyRef Name="id_typ" />
+      </Principal>
+      <Dependent Role="uzytkownik">
+        <PropertyRef Name="typ_id_typ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_zadanieuzytkownik">
+    <End Role="uzytkownik" Type="sql29880Model.Store.uzytkownik" Multiplicity="1" />
+    <End Role="zadanie" Type="sql29880Model.Store.zadanie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="uzytkownik">
+        <PropertyRef Name="id_uzytkownik" />
+      </Principal>
+      <Dependent Role="zadanie">
+        <PropertyRef Name="uzytkownik_id_uzytkownik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="algorytmzadanie">
+    <End Role="algorytm" Type="sql29880Model.Store.algorytmSet" Multiplicity="1" />
+    <End Role="zadanie" Type="sql29880Model.Store.zadanie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="algorytm">
+        <PropertyRef Name="id_algorytm" />
+      </Principal>
+      <Dependent Role="zadanie">
+        <PropertyRef Name="algorytm_id_algorytm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="sql29880Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -116,6 +141,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_zadanieuzytkownik" Association="sql29880Model.FK_zadanieuzytkownik">
             <End Role="uzytkownik" EntitySet="uzytkownik" />
+            <End Role="zadanie" EntitySet="zadanie" />
+          </AssociationSet>
+          <EntitySet Name="algorytmSet" EntityType="sql29880Model.algorytm" />
+          <AssociationSet Name="algorytmzadanie" Association="sql29880Model.algorytmzadanie">
+            <End Role="algorytm" EntitySet="algorytmSet" />
             <End Role="zadanie" EntitySet="zadanie" />
           </AssociationSet>
         </EntityContainer>
@@ -152,15 +182,18 @@
           </Key>
           <Property Name="id_zadanie" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="zadana_liczba" Type="String" MaxLength="10000" Unicode="false" FixedLength="false" />
-          <Property Name="wynik" Type="String" MaxLength="10000" Unicode="false" FixedLength="false" />
+          <Property Name="wynik1" Type="String" MaxLength="10000" Unicode="false" FixedLength="false" />
           <Property Name="postep" Type="Int32" />
           <Property Name="czas_rozpoczecie" Type="Time" />
           <Property Name="czas_zakonczenia" Type="Time" />
-          <Property Name="kolejnosc" Type="Int64" />
+          <Property Name="czas_dodania" Type="DateTime" />
           <Property Name="status__id_status" Type="Int64" Nullable="false" />
           <Property Name="uzytkownik_id_uzytkownik" Type="Int64" Nullable="false" />
           <NavigationProperty Name="status_" Relationship="sql29880Model.FK_status_zadanie" FromRole="zadanie" ToRole="status_" />
           <NavigationProperty Name="uzytkownik" Relationship="sql29880Model.FK_zadanieuzytkownik" FromRole="zadanie" ToRole="uzytkownik" />
+          <Property Type="String" Name="wynik2" Nullable="false" />
+          <NavigationProperty Name="algorytm" Relationship="sql29880Model.algorytmzadanie" FromRole="zadanie" ToRole="algorytm" />
+          <Property Type="Int32" Name="algorytm_id_algorytm" Nullable="false" />
         </EntityType>
         <Association Name="FK_status_zadanie">
           <End Role="status_" Type="sql29880Model.status_" Multiplicity="1" />
@@ -198,56 +231,85 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="algorytm">
+          <Key>
+            <PropertyRef Name="id_algorytm" />
+          </Key>
+          <Property Type="Int32" Name="id_algorytm" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nazwa" Nullable="false" />
+          <NavigationProperty Name="zadanie" Relationship="sql29880Model.algorytmzadanie" FromRole="algorytm" ToRole="zadanie" />
+        </EntityType>
+        <Association Name="algorytmzadanie">
+          <End Type="sql29880Model.algorytm" Role="algorytm" Multiplicity="1" />
+          <End Type="sql29880Model.zadanie" Role="zadanie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="algorytm">
+              <PropertyRef Name="id_algorytm" />
+            </Principal>
+            <Dependent Role="zadanie">
+              <PropertyRef Name="algorytm_id_algorytm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="sql29880ModelStoreContainer" CdmEntityContainer="Baza2Context">
-          <EntitySetMapping Name="status_">
-            <EntityTypeMapping TypeName="sql29880Model.status_">
-              <MappingFragment StoreEntitySet="status_">
-                <ScalarProperty Name="id_status" ColumnName="id_status" />
-                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="typ">
-            <EntityTypeMapping TypeName="sql29880Model.typ">
-              <MappingFragment StoreEntitySet="typ">
-                <ScalarProperty Name="id_typ" ColumnName="id_typ" />
-                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="uzytkownik">
-            <EntityTypeMapping TypeName="sql29880Model.uzytkownik">
-              <MappingFragment StoreEntitySet="uzytkownik">
-                <ScalarProperty Name="id_uzytkownik" ColumnName="id_uzytkownik" />
-                <ScalarProperty Name="login" ColumnName="login" />
-                <ScalarProperty Name="haslo" ColumnName="haslo" />
-                <ScalarProperty Name="typ_id_typ" ColumnName="typ_id_typ" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="zadanie">
-            <EntityTypeMapping TypeName="sql29880Model.zadanie">
-              <MappingFragment StoreEntitySet="zadanie">
-                <ScalarProperty Name="id_zadanie" ColumnName="id_zadanie" />
-                <ScalarProperty Name="zadana_liczba" ColumnName="zadana_liczba" />
-                <ScalarProperty Name="wynik" ColumnName="wynik" />
-                <ScalarProperty Name="postep" ColumnName="postep" />
-                <ScalarProperty Name="czas_rozpoczecie" ColumnName="czas_rozpoczecie" />
-                <ScalarProperty Name="czas_zakonczenia" ColumnName="czas_zakonczenia" />
-                <ScalarProperty Name="kolejnosc" ColumnName="kolejnosc" />
-                <ScalarProperty Name="status__id_status" ColumnName="status__id_status" />
-                <ScalarProperty Name="uzytkownik_id_uzytkownik" ColumnName="uzytkownik_id_uzytkownik" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sql29880ModelStoreContainer" CdmEntityContainer="Baza2Context">
+    <EntitySetMapping Name="status_">
+      <EntityTypeMapping TypeName="IsTypeOf(sql29880Model.status_)">
+        <MappingFragment StoreEntitySet="status_">
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="typ">
+      <EntityTypeMapping TypeName="IsTypeOf(sql29880Model.typ)">
+        <MappingFragment StoreEntitySet="typ">
+          <ScalarProperty Name="id_typ" ColumnName="id_typ" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uzytkownik">
+      <EntityTypeMapping TypeName="IsTypeOf(sql29880Model.uzytkownik)">
+        <MappingFragment StoreEntitySet="uzytkownik">
+          <ScalarProperty Name="id_uzytkownik" ColumnName="id_uzytkownik" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="haslo" ColumnName="haslo" />
+          <ScalarProperty Name="typ_id_typ" ColumnName="typ_id_typ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zadanie">
+      <EntityTypeMapping TypeName="IsTypeOf(sql29880Model.zadanie)">
+        <MappingFragment StoreEntitySet="zadanie">
+          <ScalarProperty Name="id_zadanie" ColumnName="id_zadanie" />
+          <ScalarProperty Name="zadana_liczba" ColumnName="zadana_liczba" />
+          <ScalarProperty Name="wynik1" ColumnName="wynik1" />
+          <ScalarProperty Name="postep" ColumnName="postep" />
+          <ScalarProperty Name="czas_rozpoczecie" ColumnName="czas_rozpoczecie" />
+          <ScalarProperty Name="czas_zakonczenia" ColumnName="czas_zakonczenia" />
+          <ScalarProperty Name="czas_dodania" ColumnName="czas_dodania" />
+          <ScalarProperty Name="status__id_status" ColumnName="status__id_status" />
+          <ScalarProperty Name="uzytkownik_id_uzytkownik" ColumnName="uzytkownik_id_uzytkownik" />
+          <ScalarProperty Name="wynik2" ColumnName="wynik2" />
+          <ScalarProperty Name="algorytm_id_algorytm" ColumnName="algorytm_id_algorytm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="algorytmSet">
+      <EntityTypeMapping TypeName="IsTypeOf(sql29880Model.algorytm)">
+        <MappingFragment StoreEntitySet="algorytmSet">
+          <ScalarProperty Name="id_algorytm" ColumnName="id_algorytm" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">

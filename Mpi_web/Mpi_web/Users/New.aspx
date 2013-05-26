@@ -18,6 +18,21 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="auto-style1">
         <tr>
+            <td>Algorytm</td>
+            <td>
+                <asp:DropDownList ID="ListaAlgorytmow" runat="server">
+                    <asp:ListItem Value="1">Miller-Rabin</asp:ListItem>
+                    <asp:ListItem Value="2">AVR</asp:ListItem>
+                    <asp:ListItem Value="3">Wszystkie</asp:ListItem>
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
             <td>Zadana Liczba</td>
             <td>
                 <asp:TextBox ID="LiczbaBox" runat="server" Width="305px" OnTextChanged="LiczbaBox_TextChanged"></asp:TextBox>
@@ -25,32 +40,46 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style3">plik txt</td>
+            <td class="auto-style3"></td>
             <td class="auto-style3">
                
                    
-                        <asp:FileUpload ID="FileUpload1" runat="server" Height="26px" Width="313px" />
+                <asp:Button ID="AddButton" runat="server"  OnClick="AddButton_Click" Text="Dodaj" Width="110px" EnableViewState="False" />
                    
                 
             </td>
         </tr>
         <tr>
-            <td class="auto-style5"></td>
+            <td class="auto-style5">&nbsp;</td>
             <td class="auto-style5">
-                <asp:Button ID="AddButton" runat="server"  OnClick="AddButton_Click" style="height: 26px" Text="Dodaj" Width="98px" EnableViewState="False" />
+                <asp:Label ID="Label1" runat="server" ForeColor="Red" Text="Dodano Pomyslnie" Visible="False"></asp:Label>
             </td>
         </tr>
         <tr>
-            <td class="auto-style6"></td>
+            <td class="auto-style6">plik txt</td>
             <td class="auto-style6">
-                <asp:Label ID="Label1" runat="server" ForeColor="Red" Text="Dodano Pomyslnie" Visible="False"></asp:Label>
+               
+                   
+                        <asp:FileUpload ID="FileUpload" runat="server" Height="26px" Width="313px" />
+                   
+                
             </td>
         </tr>
         <tr>
             <td>&nbsp;</td>
             <td>
                 
+                <asp:Button ID="FileButton" runat="server" CausesValidation="False" OnClick="FileButton_Click" Text="Wczytaj z Pliku" Width="110px" />
+                
             </td>
+        </tr>
+        
+        
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                
+                &nbsp;</td>
         </tr>
         
         

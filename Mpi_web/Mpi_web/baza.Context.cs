@@ -29,5 +29,6 @@ namespace Mpi_web
         public DbSet<typ> typ { get; set; }
         public DbSet<uzytkownik> uzytkownik { get; set; }
         public DbSet<zadanie> zadanie { get; set; }
+        public DbSet<algorytm> algorytmSet { get; set; }
     }
 }
