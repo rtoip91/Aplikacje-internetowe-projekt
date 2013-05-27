@@ -8,7 +8,7 @@
             <table cellpadding="4" cellspacing="0" style="border-collapse:collapse;">
                 <tr>
                     <td>
-                        <table cellpadding="0" style="height:163px;width:277px;">
+                        <table cellpadding="0" style="height:220px; width:406px;">
                             <tr>
                                 <td align="center" colspan="2" style="color:White;background-color:#5D7B9D;font-size:0.9em;font-weight:bold;">Logowanie</td>
                             </tr>

@@ -64,9 +64,15 @@ namespace Mpi_web.Users
 
             try
             {
+                //sprawdzenie długości pliku
+                if (filelen == 0)
+                {
+                    throw new Exception();
+                }
 
                 for (int loop1 = 0; loop1 < filelen; loop1++)
                 {
+                    //kowersja z byte na char
                     Input2[loop1] = (char)Input[loop1];
                     // sprawdzenie czy kolejny wczytany z pliku element jest cyfrą
                     if (Input2[loop1] < '0' || Input2[loop1] > '9')
@@ -83,7 +89,7 @@ namespace Mpi_web.Users
             }
             catch
             {
-                Label1.Text = "Błędna zawarotść pliku";
+                Label1.Text = "Błędna zawartość pliku";
                 Label1.Visible = true;
             }
 

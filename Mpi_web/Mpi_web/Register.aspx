@@ -63,7 +63,7 @@
             <td>
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
-                        <asp:Label ID="Label1" runat="server" Visible="False"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Visible="False" ForeColor="#006600"></asp:Label>
                     </ContentTemplate>
                     <Triggers>
                         <asp:AsyncPostBackTrigger ControlID="UserButton" EventName="Click" />
