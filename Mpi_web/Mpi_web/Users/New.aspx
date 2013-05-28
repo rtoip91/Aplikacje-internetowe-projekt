@@ -71,7 +71,8 @@
                
                    
                         <asp:FileUpload ID="FileUpload" runat="server" Height="26px" Width="313px" />
-                   
+                    <asp:RegularExpressionValidator ID="FileUpLoadValidator" runat="server" ErrorMessage="Tylko pliki .txt"
+                ValidationExpression=".*(\.txt|\.TXT)$" ControlToValidate="FileUpload" Display="None" ForeColor="Red"/>
                 
             </td>
         </tr>
