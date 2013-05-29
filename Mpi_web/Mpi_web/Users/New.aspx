@@ -51,7 +51,7 @@
         <tr>
             <td class="auto-style7"><strong>Zadana Liczba</strong></td>
             <td>
-                <asp:TextBox ID="LiczbaBox" runat="server" Width="305px" OnTextChanged="LiczbaBox_TextChanged" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="LiczbaBox" runat="server" Width="305px" OnTextChanged="LiczbaBox_TextChanged" TextMode="Number">0</asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="LiczbaBox" ErrorMessage="Należy podać liczbę" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
@@ -72,7 +72,7 @@
                    
                         <asp:FileUpload ID="FileUpload" runat="server" Height="26px" Width="313px" />
                     <asp:RegularExpressionValidator ID="FileUpLoadValidator" runat="server" ErrorMessage="Tylko pliki .txt"
-                ValidationExpression=".*(\.txt|\.TXT)$" ControlToValidate="FileUpload" Display="None" ForeColor="Red"/>
+                ValidationExpression=".*(\.txt|\.TXT)$" ControlToValidate="FileUpload" ForeColor="Red"/>
                 
             </td>
         </tr>
@@ -81,7 +81,7 @@
             <td class="auto-style6">
                
                    
-                <asp:Button ID="FileButton" runat="server" CausesValidation="False" OnClick="FileButton_Click" Text="Wczytaj z Pliku" Width="110px" />
+                <asp:Button ID="FileButton" runat="server" OnClick="FileButton_Click" Text="Wczytaj z Pliku" Width="110px" />
                 
                 
             </td>
