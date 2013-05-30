@@ -8,6 +8,15 @@ namespace Mpi_web.App_Code
 {
     public class MyMembershipProvider : MembershipProvider
     {
+        /// <summary>
+        /// Funkcja Hashująca
+        /// </summary>
+        /// <param name="plainText"></param>
+        /// <returns>String po hashowaniu SHA1</returns>
+        public static string GetEncriptedPassword(string plainText)
+        {
+            return FormsAuthentication.HashPasswordForStoringInConfigFile(plainText, "SHA1");
+        }
 
 
         public override string ApplicationName
@@ -26,11 +35,11 @@ namespace Mpi_web.App_Code
         {
             Baza2Context baza = new Baza2Context();
             uzytkownik u1 = null;
-            
+            String stare = GetEncriptedPassword(oldPassword);
            
             try
             {
-                u1 = (from u in baza.uzytkownik where u.login == username && u.haslo == oldPassword select u).First();
+                u1 = (from u in baza.uzytkownik where u.login == username && u.haslo == stare select u).First();
             }
             catch
             {
@@ -39,7 +48,7 @@ namespace Mpi_web.App_Code
           
             if (u1 != null)
             {
-                u1.haslo = newPassword;
+                u1.haslo = GetEncriptedPassword(newPassword);
                 baza.SaveChanges();
                 return true;
             }
@@ -172,10 +181,10 @@ namespace Mpi_web.App_Code
         {
             Baza2Context panel = new Baza2Context();
             uzytkownik u1 = null;
-            
+            String pass = GetEncriptedPassword(password);
             try
             {
-                u1 = (from u in panel.uzytkownik where u.login == username && u.haslo == password select u).First();
+                u1 = (from u in panel.uzytkownik where u.login == username && u.haslo == pass select u).First();
             }
             catch
             {

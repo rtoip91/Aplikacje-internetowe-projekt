@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -19,7 +20,7 @@ namespace Mpi_web.Users
             Baza2Context baza = new Baza2Context();
             uzytkownik nowy = new uzytkownik();
             nowy.login = LoginBox.Text;
-            nowy.haslo = PassBox.Text;
+            nowy.haslo = GetEncriptedPassword(PassBox.Text);
             nowy.typ_id_typ = 1;
             try
             {
@@ -33,6 +34,11 @@ namespace Mpi_web.Users
                 Label1.Text = "Dodano nowego użytkownika";
             }
             Label1.Visible = true;
+        }
+
+        public static string GetEncriptedPassword(string plainText)
+        {
+            return FormsAuthentication.HashPasswordForStoringInConfigFile(plainText, "SHA1");
         }
     }
 }
