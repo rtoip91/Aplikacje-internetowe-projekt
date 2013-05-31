@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sql29880ModelStoreContainer" CdmEntityContainer="Baza2Context">
+    <EntitySetMapping Name="status_">
+      <EntityTypeMapping TypeName="IsTypeOf(sql29880Model.status_)">
+        <MappingFragment StoreEntitySet="status_">
+          <ScalarProperty Name="id_status" ColumnName="id_status" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="typ">
+      <EntityTypeMapping TypeName="IsTypeOf(sql29880Model.typ)">
+        <MappingFragment StoreEntitySet="typ">
+          <ScalarProperty Name="id_typ" ColumnName="id_typ" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uzytkownik">
+      <EntityTypeMapping TypeName="IsTypeOf(sql29880Model.uzytkownik)">
+        <MappingFragment StoreEntitySet="uzytkownik">
+          <ScalarProperty Name="id_uzytkownik" ColumnName="id_uzytkownik" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="haslo" ColumnName="haslo" />
+          <ScalarProperty Name="typ_id_typ" ColumnName="typ_id_typ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zadanie">
+      <EntityTypeMapping TypeName="IsTypeOf(sql29880Model.zadanie)">
+        <MappingFragment StoreEntitySet="zadanie">
+          <ScalarProperty Name="id_zadanie" ColumnName="id_zadanie" />
+          <ScalarProperty Name="zadana_liczba" ColumnName="zadana_liczba" />
+          <ScalarProperty Name="wynik1" ColumnName="wynik1" />
+          <ScalarProperty Name="postep" ColumnName="postep" />
+          <ScalarProperty Name="czas_rozpoczecie" ColumnName="czas_rozpoczecie" />
+          <ScalarProperty Name="czas_zakonczenia" ColumnName="czas_zakonczenia" />
+          <ScalarProperty Name="czas_dodania" ColumnName="czas_dodania" />
+          <ScalarProperty Name="status__id_status" ColumnName="status__id_status" />
+          <ScalarProperty Name="uzytkownik_id_uzytkownik" ColumnName="uzytkownik_id_uzytkownik" />
+          <ScalarProperty Name="wynik2" ColumnName="wynik2" />
+          <ScalarProperty Name="algorytm_id_algorytm" ColumnName="algorytm_id_algorytm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="algorytmSet">
+      <EntityTypeMapping TypeName="IsTypeOf(sql29880Model.algorytm)">
+        <MappingFragment StoreEntitySet="algorytmSet">
+          <ScalarProperty Name="id_algorytm" ColumnName="id_algorytm" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

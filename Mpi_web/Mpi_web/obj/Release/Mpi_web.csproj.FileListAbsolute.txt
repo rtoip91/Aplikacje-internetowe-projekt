@@ -1,0 +1,7 @@
+G:\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\bin\Mpi_web.dll
+G:\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\bin\Mpi_web.pdb
+G:\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\bin\EntityFramework.dll
+G:\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\bin\EntityFramework.xml
+G:\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\obj\Release\Mpi_web.csprojResolveAssemblyReference.cache
+G:\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\obj\Release\Mpi_web.dll
+G:\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\obj\Release\Mpi_web.pdb
