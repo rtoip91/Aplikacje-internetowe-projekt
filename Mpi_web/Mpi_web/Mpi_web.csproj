@@ -63,6 +63,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\admin.aspx" />
+    <Content Include="Admin\New.aspx" />
+    <Content Include="Admin\Users.aspx" />
     <Content Include="Baza.edmx.sql" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
@@ -74,6 +77,34 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\New.aspx.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\New.aspx.designer.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
     <Compile Include="algorytm.cs">
       <DependentUpon>baza.tt</DependentUpon>
     </Compile>
@@ -172,6 +203,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>baza.edmx</DependentUpon>
       <LastGenOutput>baza.cs</LastGenOutput>
+    </Content>
+    <Content Include="Admin\Admin.Master" />
+    <Content Include="Admin\Web.config">
+      <SubType>Designer</SubType>
     </Content>
     <None Include="Properties\PublishProfiles\mpi_somee.pubxml" />
     <None Include="Web.Debug.config">

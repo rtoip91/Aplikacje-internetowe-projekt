@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/glowna.Master" AutoEventWireup="true" CodeBehind="Tasks.aspx.cs" Inherits="Mpi_web.Users.Tasks" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
     <style type="text/css">
     .auto-style1 {
         width: 100%;
@@ -16,9 +17,9 @@
 
     <table class="auto-style1">
     <tr>
-        <td>Wybierz zadanie:</td>
+        <td style="font-style: italic; text-decoration: underline; font-weight: 700">Wybierz zadanie:</td>
         <td>
-            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="zadana_liczba" DataValueField="id_zadanie">
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="zadana_liczba" DataValueField="id_zadanie" Width="300px">
             </asp:DropDownList>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="server=sql2.freesqldatabase.com;user id=sql29880;password=pE4%eF9*;persist security info=True;database=sql29880" ProviderName="MySql.Data.MySqlClient" SelectCommand=""></asp:SqlDataSource>
         </td>
@@ -30,13 +31,14 @@
         </td>
     </tr>
         </table>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
     <table class="auto-style1">
     <tr>
         <td style="text-align: right">
             <asp:Label ID="Label1" runat="server" Text="Liczba w zadaniu:" Visible="False" style="font-weight: 700"></asp:Label>
         </td>
         <td>
-            <asp:TextBox ID="TextBox1" runat="server" Visible="False" ReadOnly="True" Enabled="False" Width="200px"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" Visible="False" ReadOnly="True" Enabled="False" Width="300px" Height="42px" TextMode="MultiLine"></asp:TextBox>
         </td>
     </tr>
     <tr>
@@ -94,4 +96,5 @@
             &nbsp;</td>
     </tr>
 </table>
+        </asp:UpdatePanel>
 </asp:Content>
