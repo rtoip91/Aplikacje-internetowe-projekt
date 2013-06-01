@@ -1,0 +1,129 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Mpi_web.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <style type="text/css">
+        html, body {
+	background-color: #fff;
+	color: #000;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#top {
+	
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+#NAGLOWEK {
+	background-color: #28e;
+    text-align: center;
+    font-family: 'Comic Sans MS';
+    font-size: large;
+    padding: 8px;
+    
+}
+
+#poziom {
+	background-color: #def;
+    text-align: right;
+    font-family: 'Arial';
+    font-size: large;
+    padding: 8px;
+    
+}
+
+#MENU {
+	width: 210px;
+	float: left;
+	overflow: hidden;
+    padding-top: 8px;
+    padding-bottom: 8px;
+ 	background-color: #fff;
+    height: inherit;
+   
+}
+
+#TRESC {
+	margin-left: 10px;
+	float: left;
+    padding-top: 8px;
+    padding-bottom: 8px;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+
+
+ul, ul li {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	width: 200px;
+	padding: 2px 2px 1px 2px;
+	background-color: #9ce;
+
+}
+
+ul li {
+	border-bottom: 1px solid #9ce;
+}
+
+ul a:link, ul a:visited {
+	display: block;
+	width: 176px;
+	text-decoration: none;
+	padding: 7px;
+	font-weight: bold;
+	background-color: #27c;
+	color: #def;
+	border-left: 10px solid #25b;
+}
+
+ul a:hover {
+	width: 166px;
+	background-color: #28e;
+	color: #fff;
+	border-left: 20px solid #26d;
+}
+    </style>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+       <div id="top">
+	<div id="NAGLOWEK">Liczby pierwsze</div>
+    <div id="poziom">
+        <asp:LoginName ID="LoginName1" runat="server" />
+&nbsp;
+        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+           </div>
+	<div id="MENU">
+        <ul>
+                <li><asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/Default.aspx" CausesValidation="False">Strona Główna</asp:LinkButton></li>
+                <li><asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Admin/Users.aspx" CausesValidation="False">Użytkownicy</asp:LinkButton></li>
+                <li><asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/Admin/New.aspx" CausesValidation="False">Nowy Administrator</asp:LinkButton></li>
+                
+        </ul>
+        
+        </div>
+	<div id="TRESC">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+       </div>
+	
+</div>
+    </form>
+</body>
+</html>
