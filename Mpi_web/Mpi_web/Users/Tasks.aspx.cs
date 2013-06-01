@@ -49,9 +49,7 @@ namespace Mpi_web.Users
             TextBox6.Visible = true;
             TextBox6.Text = (from u in baza.zadanie where u.id_zadanie == liczba select u.czas_dodania).FirstOrDefault().ToString();
 
-            Label7.Visible = true;
-            TextBox7.Visible = true;
-            TextBox7.Text = (from u in baza.zadanie where u.id_zadanie == liczba select u.wynik2).FirstOrDefault();
+           
 
             Label8.Visible = true;
             TextBox8.Visible = true;
@@ -59,7 +57,7 @@ namespace Mpi_web.Users
             if (id_alg == "1")
                 TextBox8.Text = "Miller-Rabin";
             if (id_alg == "2")
-                TextBox8.Text = "AVR";
+                TextBox8.Text = "Fermat";
             if (id_alg == "3")
                 TextBox8.Text = "Wszystkie";
         }

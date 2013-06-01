@@ -37,8 +37,7 @@
             <td>
                 <asp:DropDownList ID="ListaAlgorytmow" runat="server">
                     <asp:ListItem Value="1">Miller-Rabin</asp:ListItem>
-                    <asp:ListItem Value="2">AVR</asp:ListItem>
-                    <asp:ListItem Value="3">Wszystkie</asp:ListItem>
+                    <asp:ListItem Value="2">Fermat</asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>
