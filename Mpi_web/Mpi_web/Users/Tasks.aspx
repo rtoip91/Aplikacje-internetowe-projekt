@@ -15,6 +15,29 @@
     </asp:ScriptManager>
     <br />
 
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" AllowDelete="True" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames="id_zadanie">
+        <AlternatingRowStyle BackColor="White" />
+        <Columns> 
+                  
+             <asp:CommandField ShowDeleteButton="True"></asp:CommandField>
+             <asp:BoundField  DataField="id_zadanie" HeaderText="ID"  />
+             <asp:BoundField DataField="zadana_liczba" HeaderText="Zadana liczba" />
+             <asp:BoundField DataField="czas_dodania" HeaderText="Czas dodania" />
+             <asp:BoundField DataField="czas_zakonczenia" HeaderText="Czas zakończenia" />
+        </Columns>
+        <EditRowStyle BackColor="#2461BF" />
+        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#EFF3FB" />
+        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        <sortedascendingcellstyle backcolor="#F5F7FB" />
+        <sortedascendingheaderstyle backcolor="#6D95E1" />
+        <sorteddescendingcellstyle backcolor="#E9EBEF" />
+        <sorteddescendingheaderstyle backcolor="#4870BE" />
+    </asp:GridView>
+    <br />
+
     <table class="auto-style1">
     <tr>
         <td style="font-style: italic; text-decoration: underline; font-weight: 700">Wybierz zadanie:</td>
@@ -31,7 +54,10 @@
         </td>
     </tr>
         </table>
-   
+    
+
+
+
     <table class="auto-style1">
     <tr>
         <td style="text-align: right">
@@ -96,5 +122,5 @@
             &nbsp;</td>
     </tr>
 </table>
-       
+        
 </asp:Content>

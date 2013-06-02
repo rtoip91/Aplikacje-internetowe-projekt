@@ -16,11 +16,18 @@ namespace Mpi_web.Users
         protected void Page_Load(object sender, EventArgs e)
         {
             string User = Page.User.Identity.Name.ToString();
-            SqlDataSource1.SelectCommand = "SELECT zadanie.id_zadanie, zadanie.zadana_liczba FROM zadanie JOIN uzytkownik ON zadanie.uzytkownik_id_uzytkownik = uzytkownik.id_uzytkownik WHERE uzytkownik.login = '"+User+"'";
+            SqlDataSource1.SelectCommand = "SELECT zadanie.id_zadanie, zadanie.zadana_liczba, czas_dodania, wynik1, czas_zakonczenia FROM zadanie JOIN uzytkownik ON zadanie.uzytkownik_id_uzytkownik = uzytkownik.id_uzytkownik WHERE uzytkownik.login = '"+User+"'";
+            SqlDataSource1.DeleteCommand = "DELETE FROM zadanie WHERE id_zadanie=@id_zadanie";
+            GridView1.Columns[0].HeaderText = " ";
+            
+            
+           
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            
+            
             Baza2Context baza = new Baza2Context();
             long id = (from u in baza.uzytkownik where u.login == User.Identity.Name select u.id_uzytkownik).FirstOrDefault();
             long liczba = Convert.ToInt64(DropDownList1.Text);
