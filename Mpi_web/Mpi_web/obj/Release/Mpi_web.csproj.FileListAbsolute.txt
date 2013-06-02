@@ -12,3 +12,10 @@ C:\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\bin\EntityFramework.xml
 C:\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\obj\Release\Mpi_web.csprojResolveAssemblyReference.cache
 C:\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\obj\Release\Mpi_web.dll
 C:\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\obj\Release\Mpi_web.pdb
+C:\Users\Stasiu\Documents\GitHub\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\bin\Mpi_web.dll
+C:\Users\Stasiu\Documents\GitHub\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\bin\Mpi_web.pdb
+C:\Users\Stasiu\Documents\GitHub\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\bin\EntityFramework.dll
+C:\Users\Stasiu\Documents\GitHub\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\bin\EntityFramework.xml
+C:\Users\Stasiu\Documents\GitHub\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\obj\Release\Mpi_web.csprojResolveAssemblyReference.cache
+C:\Users\Stasiu\Documents\GitHub\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\obj\Release\Mpi_web.dll
+C:\Users\Stasiu\Documents\GitHub\Aplikacje-internetowe-projekt\Mpi_web\Mpi_web\obj\Release\Mpi_web.pdb
