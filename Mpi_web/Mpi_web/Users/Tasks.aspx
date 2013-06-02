@@ -31,7 +31,7 @@
         </td>
     </tr>
         </table>
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+   
     <table class="auto-style1">
     <tr>
         <td style="text-align: right">
@@ -96,5 +96,5 @@
             &nbsp;</td>
     </tr>
 </table>
-        </asp:UpdatePanel>
+       
 </asp:Content>
