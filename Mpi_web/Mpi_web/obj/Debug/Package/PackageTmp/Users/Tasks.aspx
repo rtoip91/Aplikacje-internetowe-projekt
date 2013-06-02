@@ -9,10 +9,13 @@
         }
 </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
 
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
+    <br />
+
+    
     <br />
 
     <table class="auto-style1">
@@ -20,18 +23,29 @@
         <td style="font-style: italic; text-decoration: underline; font-weight: 700">Wybierz zadanie:</td>
         <td>
             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="zadana_liczba" DataValueField="id_zadanie" Width="300px">
+            
             </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="server=sql2.freesqldatabase.com;user id=sql29880;password=pE4%eF9*;persist security info=True;database=sql29880" ProviderName="MySql.Data.MySqlClient" SelectCommand=""></asp:SqlDataSource>
+             
+
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="server=sql2.freesqldatabase.com;user id=sql29880;password=pE4%eF9*;persist security info=True;database=sql29880" ProviderName="MySql.Data.MySqlClient" SelectCommand="" >
+           
+            
+            </asp:SqlDataSource>
+            
         </td>
     </tr>
     <tr>
         <td>&nbsp;</td>
         <td>
             <asp:Button ID="Button1" runat="server" Height="22px" OnClick="Button1_Click" Text="Pokaż" Width="143px" />
+            
         </td>
     </tr>
         </table>
-   
+    
+
+
+
     <table class="auto-style1">
     <tr>
         <td style="text-align: right">
@@ -88,13 +102,21 @@
         <td>
             <asp:TextBox ID="TextBox8" runat="server" Visible="False" Enabled="False" Width="200px"></asp:TextBox>
         </td>
+        <td>&nbsp;</td>
+
     </tr>
+        <tr>
+        <td>&nbsp;</td>
+        <td>
+            <asp:Button ID="Button2" runat="server" Height="22px" Visible="False" OnClick="Button2_Click" Text="Usuń zadanie" Width="107px" />
+            
+        </td>
+        </tr>
     <tr>
         <td style="text-align: right">
             &nbsp;</td>
-        <td>
             &nbsp;</td>
     </tr>
 </table>
-       
+        
 </asp:Content>

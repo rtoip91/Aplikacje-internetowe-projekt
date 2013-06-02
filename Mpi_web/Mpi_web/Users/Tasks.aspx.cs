@@ -17,9 +17,8 @@ namespace Mpi_web.Users
         {
             string User = Page.User.Identity.Name.ToString();
             SqlDataSource1.SelectCommand = "SELECT zadanie.id_zadanie, zadanie.zadana_liczba, czas_dodania, wynik1, czas_zakonczenia FROM zadanie JOIN uzytkownik ON zadanie.uzytkownik_id_uzytkownik = uzytkownik.id_uzytkownik WHERE uzytkownik.login = '"+User+"'";
-            SqlDataSource1.DeleteCommand = "DELETE FROM zadanie WHERE id_zadanie=@id_zadanie";
-            GridView1.Columns[0].HeaderText = " ";
-            
+            SqlDataSource1.DeleteCommand = "DELETE FROM zadanie WHERE id_zadanie=@id_zadanie2";
+                     
             
            
         }
@@ -56,6 +55,7 @@ namespace Mpi_web.Users
             TextBox6.Visible = true;
             TextBox6.Text = (from u in baza.zadanie where u.id_zadanie == liczba select u.czas_dodania).FirstOrDefault().ToString();
 
+            Button2.Visible = true;
            
 
             Label8.Visible = true;
@@ -67,6 +67,31 @@ namespace Mpi_web.Users
                 TextBox8.Text = "Fermat";
             if (id_alg == "3")
                 TextBox8.Text = "Wszystkie";
+        }
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+            SqlDataSource1.DeleteParameters.Add("id_zadanie2", DropDownList1.Text);
+            SqlDataSource1.Delete();
+            Label1.Visible = false;
+            TextBox1.Visible = false;
+            Label2.Visible = false;
+            TextBox2.Visible = false;
+            Label3.Visible = false;
+            TextBox3.Visible = false;
+            Label4.Visible = false;
+            TextBox4.Visible = false;
+            Label5.Visible = false;
+            TextBox5.Visible = false;
+            Label6.Visible = false;
+            TextBox6.Visible = false;
+            Button2.Visible = false;
+            Label8.Visible = false;
+            TextBox8.Visible = false;
+            
+            
+
+            
         }
     }
 }
