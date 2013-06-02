@@ -18,9 +18,6 @@ namespace Mpi_web.Users
             string User = Page.User.Identity.Name.ToString();
             SqlDataSource1.SelectCommand = "SELECT zadanie.id_zadanie, zadanie.zadana_liczba, czas_dodania, wynik1, czas_zakonczenia FROM zadanie JOIN uzytkownik ON zadanie.uzytkownik_id_uzytkownik = uzytkownik.id_uzytkownik WHERE uzytkownik.login = '"+User+"'";
             SqlDataSource1.DeleteCommand = "DELETE FROM zadanie WHERE id_zadanie=@id_zadanie2";
-                     
-            
-           
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -41,7 +38,7 @@ namespace Mpi_web.Users
 
             Label3.Visible = true;
             TextBox3.Visible = true;
-            TextBox3.Text = (from u in baza.zadanie where u.id_zadanie == liczba select u.postep).FirstOrDefault().ToString();
+            TextBox3.Text = DateTime.Now.ToString() + " postęp to: " + (from u in baza.zadanie where u.id_zadanie == liczba select u.postep).FirstOrDefault().ToString() + "%";
 
             Label4.Visible = true;
             TextBox4.Visible = true;
@@ -67,6 +64,8 @@ namespace Mpi_web.Users
                 TextBox8.Text = "Fermat";
             if (id_alg == "3")
                 TextBox8.Text = "Wszystkie";
+            Button3.Visible = true;
+
         }
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -88,10 +87,25 @@ namespace Mpi_web.Users
             Button2.Visible = false;
             Label8.Visible = false;
             TextBox8.Visible = false;
-            
-            
-
-            
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Baza2Context baza = new Baza2Context();
+            long liczba = Convert.ToInt64(DropDownList1.Text);
+            string postep = (from u in baza.zadanie where u.id_zadanie == liczba select u.postep).FirstOrDefault().ToString();
+
+            TextBox3.Text = DateTime.Now.ToString() + " postęp to: " + postep + "%";
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            Baza2Context baza = new Baza2Context();
+            long liczba = Convert.ToInt64(DropDownList1.Text);
+            string postep = (from u in baza.zadanie where u.id_zadanie == liczba select u.postep).FirstOrDefault().ToString();
+            TextBox3.Text = DateTime.Now.ToString() + " postęp to: " + postep + "%";
+        }
+       
+
     }
 }
